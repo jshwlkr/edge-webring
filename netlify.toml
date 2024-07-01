@@ -4,7 +4,7 @@
   functions = ".netlify/functions"
 
 [functions]
-  directory = "functions"
+  directory = "_functions"
   included_files = ["data/members/**"]
 
 [[headers]]
