@@ -1,0 +1,43 @@
+
+<li>
+    <h3>
+        <a href="{{ member.url }}">{{ member.name }}</a>
+    </h3>
+    <ul>
+        {% if member.linkedin %}
+            <li>
+                <a href="{{ member.linkedin }}">
+                    <span>LinkedIn profile: {{ member.name }}</span>
+                </a>
+            </li>
+        {% endif %}            
+        {% if member.github %}
+            <li>
+                <a href="{{ member.github }}">
+                    <span>GitHub profile: {{ member.name }}</span>
+                </a>
+            </li>
+        {% endif %}
+        {% if member.bluesky  %}
+            <li>
+                <a href="{{ member.bluesky }}">
+                    <span>Bluesky profile: {{ member.name }}</span>
+                </a>
+            </li>
+        {% endif %}
+        {% if member.mastodon  %}
+            <li>
+                <a href="{{ member.mastodon }}">
+                    <span>Mastodon profile: {{ member.name }}</span>
+                </a>
+            </li>
+        {% endif %}
+        {% if member.rss  %}
+            <li>
+                <a href="{{ member.rss }}">
+                    <span>RSS feed: {{ member.name }}</span>
+                </a>
+            </li>
+        {% endif %}
+    </ul>
+</li>

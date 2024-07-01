@@ -1,0 +1,8 @@
+<h2>Members
+    <span>({{ members.size  }})</span>
+</h2>
+<ul>
+    {% for member in members  %}
+        <li>{% include 'partials/member', member: member[1] %}</li>
+    {% endfor  %}
+</ul>
