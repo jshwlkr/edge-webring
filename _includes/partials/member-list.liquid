@@ -1,8 +1,10 @@
 <h2>Members
-    <span>({{ members.size  }})</span>
+    <span>({{ members.size }})</span>
 </h2>
 <ul>
     {% for member in members  %}
-        <li>{% include 'partials/member', member: member[1] %}</li>
+        {% if member[1].name and member[1].website %}
+            <li>{% include 'partials/member-list-entry', member: member[1] %}</li>
+        {% endif %}
     {% endfor  %}
 </ul>

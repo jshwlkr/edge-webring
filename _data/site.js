@@ -1,5 +1,5 @@
 module.exports = {
-    title: null,
-    desc: null,
-    language: null,
+    title: "Example Webring",
+    description: "Example webring",
+    language: "en",
 };
