@@ -2,8 +2,8 @@ let fs = require("fs");
 let path = require("path");
 let members = [];
 
-fs.readdirSync('./data/members').forEach(function(file) {
-  let contents = require(path.resolve('./data/members/' + file));
+fs.readdirSync('./_data/members').forEach(function(file) {
+  let contents = require(path.resolve('./_data/members/' + file));
   members.push(contents);
 });
 
