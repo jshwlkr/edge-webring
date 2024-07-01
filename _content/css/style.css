@@ -1,0 +1,21 @@
+:root {
+    --system-ui: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+*,
+:after,
+:before {
+    box-sizing: border-box;
+    background-color: inherit;
+    color: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--system-ui);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    line-height: 1.5;
+    font-size: 1rem;
+}

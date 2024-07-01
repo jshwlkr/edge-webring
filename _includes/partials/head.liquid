@@ -5,11 +5,16 @@
     <meta name="generator" content="{{ eleventy.generator }}">
 
     <title>
-        {% if title %}
+        {% if title and title != "home" %}
             {{ title }} &nbsp;&middot;&nbsp;
         {% endif %}
         {{ site.title }}
     </title>
+
+    {% block style %}
+        <link rel="stylesheet" href="/css/style.css">
+    {% endblock %}
+
     <meta name="description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}">
 
 </head>

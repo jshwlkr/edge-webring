@@ -1,3 +1,5 @@
+const pluginLightningCSS = require("@11tyrocks/eleventy-plugin-lightningcss");
+const pluginTinyCSS = require('@sardine/eleventy-plugin-tinycss');
 const pluginSafeLinks = require('@sardine/eleventy-plugin-external-links');
 
 
@@ -7,6 +9,8 @@ module.exports = function(config) {
 
   config.setQuietMode(true);
 
+  config.addPlugin(pluginLightningCSS);
+  config.addPlugin(pluginTinyCSS);
   config.addPlugin(pluginSafeLinks);
 
   config.addLayoutAlias("base", "layouts/base.liquid");
