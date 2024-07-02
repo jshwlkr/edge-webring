@@ -17,7 +17,6 @@ module.exports = function(config) {
   config.addLayoutAlias("base", "layouts/base.liquid");
 
   return {
-    pathPrefix: null,
     dir: {
       input: "_content",
       includes: "../_includes",
