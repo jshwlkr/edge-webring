@@ -2,6 +2,16 @@
 permalink: /
 layout: "base"
 title: "home"
+class: ["home", "page"]
 ---
 
-{% include 'partials/member-list' %}
+    <div class="grid--title centered">
+        <h1 id="title">{{ site.title }}</h1>
+        <p>{{ site.description }}</p>
+    </div>
+    <nav class="grid--nav">
+        {% include 'partials/webring-navigation' %}
+    </nav>
+    <div>
+        {% include 'partials/member-list' %}
+    </div>

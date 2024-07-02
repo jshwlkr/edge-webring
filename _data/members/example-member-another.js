@@ -1,7 +1,7 @@
 module.exports = {
-    "name": "Zack Leatherman",
-    "date": "2024-06-30",
-    "website": "https://www.zachleat.com/",
-    "rss": "https://www.zachleat.com/web/feed/",
-    "bluesky": "https://bsky.app/profile/zachleat.com",
+    "name": "Joshua Walker Another",
+    "date": "2023-01-19",
+    "website": "https://jshwlkr.info/",
+    "rss": "https://jshwlkr.info/feed.xml",
+    "github": "https://github.com/jshwlkr/",
 }

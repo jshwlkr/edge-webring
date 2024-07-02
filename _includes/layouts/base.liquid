@@ -1,7 +1,9 @@
 <!doctype html >
-<html lang="{{ site.language }}">
+<html lang="{{ site.locale }}">
     {% include 'partials/head' %}
-<body>
-    {{ content }}
+<body class="{{ class | join: " " }}">
+    <main class="grid">
+        {{ content }}
+    </main>
 </body>
 </html>

@@ -19,3 +19,37 @@ body {
     line-height: 1.5;
     font-size: 1rem;
 }
+
+main {
+    display: grid;
+}
+
+.home {
+    .grid {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 100vh auto auto auto auto auto;
+        grid-template-areas:
+        "title   title   nav" 
+        "members members toc" 
+        "join    join    toc" 
+        "embed   embed   embed" 
+        "faq     faq     faq" 
+        "footer  footer  footer";
+    }
+
+    .grid .grid--title {
+        grid-area: title;
+    }
+
+    .grid .grid--nav {
+        grid-area: nav;
+    }
+ 
+}
+
+.centered {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}

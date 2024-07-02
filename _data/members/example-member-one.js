@@ -1,7 +1,7 @@
 module.exports = {
     "name": "Joshua Walker",
-    "date": "2023-01-19T00:00",
-    "website": "https://jshwlkr.info",
-    "github": "https://github.com/jshwlkr",
+    "date": "2023-05-05",
+    "website": "https://jshwlkr.info/",
     "rss": "https://jshwlkr.info/feed.xml",
+    "mastodon": "https://ansible.jshwlkr.info/@jshwlkr",
 }
