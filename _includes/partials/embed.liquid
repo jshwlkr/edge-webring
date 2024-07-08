@@ -1,0 +1,9 @@
+&lt;nav class="{{ site.title | slugify }}" aria-labelledby="{{ site.title | slugify }}"&gt;
+    &lt;h2 id="{{ site.title | slugify }}"&gt;{{ site.title }}&lt;/h2&gt;
+    &lt;p&gt;This site is a member of the &lt;a rel="external" href="{{ site.url }}"&gt;{{ site.title }}&lt;/a&gt;.&lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a rel="external" referrerpolicy="strict-origin" href="{{ site.url }}prev"&gt;Previous website&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a rel="external" referrerpolicy="strict-origin" href="{{ site.url }}random"&gt;Random website&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a rel="external" referrerpolicy="strict-origin" href="{{ site.url }}next"&gt;Next website&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;

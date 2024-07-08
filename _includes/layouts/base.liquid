@@ -2,8 +2,10 @@
 <html lang="{{ site.locale }}">
     {% include 'partials/head' %}
 <body class="{{ class | join: " " }}">
-    <main class="grid">
+    {% svgsprite %}
+    <main class="home__grid flow">
         {{ content }}
     </main>
+    {% include 'partials/footer' %}
 </body>
 </html>

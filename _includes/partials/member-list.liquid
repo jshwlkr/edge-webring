@@ -1,10 +1,10 @@
-<h2>Members
+<h2 id="members">Members
     <span>({{ members.size }})</span>
 </h2>
-<ul>
+<ul class="members__list subtle-list">
     {% for member in members  %}
         {% if member[1].name and member[1].website %}
-            <li>{% include 'partials/member-list-entry', member: member[1] %}</li>
+            <li class="members__entry">{% include 'partials/member-list-entry', member: member[1] %}</li>
         {% endif %}
     {% endfor  %}
 </ul>

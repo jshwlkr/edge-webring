@@ -1,55 +1,131 @@
-:root {
-    --system-ui: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-}
 
-*,
-:after,
-:before {
-    box-sizing: border-box;
-    background-color: inherit;
-    color: inherit;
-    margin: 0;
-    padding: 0;
-}
+@import '_vars.css';
+@import '_reset.css';
+@import '_utilities.css';
 
-body {
-    font-family: var(--system-ui);
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-    line-height: 1.5;
-    font-size: 1rem;
-}
 
-main {
+
+.home__grid {
+    --flow-space: 1.4rem;
     display: grid;
-}
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 70vh auto auto auto auto auto;
+    grid-template-areas:
+    "title   title   nav" 
+    "members members toc" 
+    "join    join    toc" 
+    "embed   embed   embed" 
+    "footer  footer  footer";
 
-.home {
-    .grid {
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 100vh auto auto auto auto auto;
+    @media (max-width: 56rem) {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 70vh auto auto auto auto auto;
         grid-template-areas:
-        "title   title   nav" 
-        "members members toc" 
-        "join    join    toc" 
-        "embed   embed   embed" 
-        "faq     faq     faq" 
-        "footer  footer  footer";
+        "title   title"
+        "nav     toc"
+        "members toc"
+        "join    join"
+        "embed   embed"
+        "footer  footer";
     }
-
-    .grid .grid--title {
-        grid-area: title;
-    }
-
-    .grid .grid--nav {
-        grid-area: nav;
-    }
- 
 }
 
-.centered {
+.site-head {
+    grid-area: title;
+    
+    .heading__title {
+        font-size: var(--step-5);
+    }
+
+    .heading__subtitle {
+        font-size: var(--step-1);
+    }
+}
+
+.site-head-ring {
+    grid-area: nav;
     align-items: center;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: var(--step-0) 1fr var(--step-0);
+    grid-template-rows: var(--step-3) 1fr var(--step-6);
+    grid-template-areas:
+    ". . ." 
+    ". links ." 
+    ". errata .";
+
+    @media (min-width: 70em) {
+        grid-template-columns: 1fr 3fr 1fr;
+    }
+
+    .ring__links {
+        grid-area: links;
+        align-items: start;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: var(--step-1);
+    }
+
+    .ring__nav {
+        font-weight: bold;
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .ring__errata {
+        grid-area: errata;
+        text-align: center;
+        font-size: .8rem;
+    }
 }
+
+.toc {
+    grid-area: toc;
+    position: sticky;
+    padding: var(--step-0);
+
+    .toc-wrapper {
+        border: var(--border-thickness-0) solid var(--color-primary);
+        padding: var(--step-1) var(--step-0) var(--step-2) var(--step-4);
+        position: sticky;
+        top: var(--step-0);
+    }
+
+    .toc__list {
+        margin-top: var(--step-1);
+    }
+
+    .toc__item {
+        margin-top: calc(var(--step-0) / 2);
+    }
+}
+
+.members {
+    grid-area: members;
+    padding: var(--step-1);
+
+    .members__list {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .members__entry {
+        align-items: center;
+        flex-direction: row;
+        padding: var(--step-0) 0;
+        display: flex;
+        justify-content: space-between;
+        border-block-start: var(--border-thickness-0) solid var(--color-primary);
+    }
+
+    .members__accounts {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+    }
+}
+

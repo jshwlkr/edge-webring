@@ -5,13 +5,37 @@ title: "home"
 class: ["home", "page"]
 ---
 
-    <div class="grid--title centered">
-        <h1 id="title">{{ site.title }}</h1>
-        <p>{{ site.description }}</p>
+    <div class="site-head centered color-secondary bgcolor-primary">
+        <h1 id="title" class="heading__title">{{ site.title }}</h1>
+        <p class="heading__subtitle">{{ site.description }}</p>
     </div>
-    <nav class="grid--nav">
+    <nav class="site-head-ring">
         {% include 'partials/webring-navigation' %}
+        <div class="ring__errata">
+            <p>
+                <a href="#join">Join this webring</a>
+            </p>
+        </div>
     </nav>
-    <div>
+
+
+    <nav class="toc">
+        <div class="toc-wrapper">
+            <h2 id="toc">Table of contents</h2>
+            <a class="visually-hidden" href="#members">Skip to members</a>
+            <ul class="toc__list">
+                <li class="toc__item">
+                    <a href="#members">Members</a>
+                </li>
+                <li class="toc__item">
+                    <a href="#join">Join this webring</a>
+                </li>
+                <li class="toc__item">
+                    <a href="#embed">Embed this webring in your website</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="members">
         {% include 'partials/member-list' %}
     </div>
