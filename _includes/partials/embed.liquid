@@ -1,9 +1,21 @@
-&lt;nav class="{{ site.title | slugify }}" aria-labelledby="{{ site.title | slugify }}"&gt;
-    &lt;h2 id="{{ site.title | slugify }}"&gt;{{ site.title }}&lt;/h2&gt;
-    &lt;p&gt;This site is a member of the &lt;a rel="external" href="{{ site.url }}"&gt;{{ site.title }}&lt;/a&gt;.&lt;/p&gt;
+<div class="grid bg-secondary-50 text-primary-800 m-4 p-4 ">
+    <pre aria-label="webring embed code" role="region" tabindex="0" class="[grid-area:1/1] overflow-auto">
+        <code id="code">
+&lt;nav class="{{ ring.title | slugify }}" aria-labelledby="{{ ring.title | slugify }}"&gt;
+    &lt;h2 id="{{ ring.title | slugify }}"&gt;{{ ring.title }}&lt;/h2&gt;
+    &lt;p&gt;This site is a member of the &lt;a rel="external" href="{{ ring.url }}"&gt;{{ ring.title }}&lt;/a&gt;.&lt;/p&gt;
     &lt;ul&gt;
-        &lt;li&gt;&lt;a rel="external" referrerpolicy="strict-origin" href="{{ site.url }}prev"&gt;Previous website&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a rel="external" referrerpolicy="strict-origin" href="{{ site.url }}random"&gt;Random website&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a rel="external" referrerpolicy="strict-origin" href="{{ site.url }}next"&gt;Next website&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a rel="external" referrerpolicy="strict-origin" href="{{ ring.url }}prev"&gt;Previous website&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a rel="external" referrerpolicy="strict-origin" href="{{ ring.url }}random"&gt;Random website&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a rel="external" referrerpolicy="strict-origin" href="{{ ring.url }}next"&gt;Next website&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
 &lt;/nav&gt;
+        </code>
+    </pre>
+    <button data-copy="#code" type="button"  class="[grid-area:1/1] size-8 relative right-4 justify-self-end bg-primary-800 text-secondary-50 ">
+        <span class="iconify lucide--clipboard"></span>
+        <span class="sr-only">Copy webring embed code</span>
+    </button>
+</div>
+
+<script src="/copy.js"></script>

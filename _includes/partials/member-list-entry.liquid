@@ -10,7 +10,15 @@
                         <span class="visually-hidden">LinkedIn profile: {{ member.name }}</span>
                     </a>
                 </li>
-            {% endif %}            
+            {% endif %}
+            {% if member.orcid %}
+                <li>
+                    <a href="{{ member.orcid }}">
+                        {% svg 'orcid' %}
+                        <span class="visually-hidden">ORCID profile: {{ member.name }}</span>
+                    </a>
+                </li>
+            {% endif %}     
             {% if member.github %}
                 <li>
                     <a href="{{ member.github }}">

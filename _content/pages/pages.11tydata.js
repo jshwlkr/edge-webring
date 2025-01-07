@@ -1,9 +1,6 @@
 
-module.exports = {
-  layout: "base",
+export default {
+  layout: "page",
   class: "page",
   permalink: "/{{ title | slugify }}/index.html",
-  eleventyImport: {
-    collections: ["css"],
-  },
 };

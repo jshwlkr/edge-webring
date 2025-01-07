@@ -1,50 +1,45 @@
-const pluginLightningCSS = require("@11tyrocks/eleventy-plugin-lightningcss");
-const pluginTinyCSS = require('@sardine/eleventy-plugin-tinycss');
-const pluginSafeLinks = require('@sardine/eleventy-plugin-external-links');
-const pluginSVGSprite = require("eleventy-plugin-svg-sprite");
 
-const terser = require("terser");
+import { IdAttributePlugin } from "@11ty/eleventy";
+import pluginNavigation from "@11ty/eleventy-navigation";
+
+import postCSS from "postcss";
+import tailwindcss from "tailwindcss";
+import autoprefixer from "autoprefixer";
+
+
+const postCSSPlugins = [
+	tailwindcss,
+	autoprefixer
+];
+
+import ring from "./_data/ring.js";
 
 /** @param {import("@11ty/eleventy").UserConfig} config */
-module.exports = function(config) {
+export default async function(config) {
 
-  config.setQuietMode(true);
+	config.addLayoutAlias("base", "layouts/base.liquid");
+	config.addLayoutAlias("page", "layouts/page.liquid");
 
-  config.addPlugin(pluginLightningCSS);
-  config.addPlugin(pluginTinyCSS);
-  config.addPlugin(pluginSafeLinks);
-  config.addPlugin(pluginSVGSprite, {
-    path: "./_assets/icons",
-    globalClasses: "icon",
-    // https://github.com/FortAwesome/Font-Awesome
-  });
+	config.addPassthroughCopy({
+		'_includes/assets/css/global.css': './global.css'
+	});
 
-  config.addLayoutAlias("base", "layouts/base.liquid");
+	config.addPassthroughCopy({
+		'_includes/assets/js/copy.js': './copy.js'
+	});
 
-  config.addWatchTarget(".browserslistrc");
-  config.addWatchTarget("./_assets/**/*");
+	config.addPlugin(IdAttributePlugin);
+	config.addPlugin(pluginNavigation);
 
-  config.addTemplateFormats("js");
+	config.addWatchTarget("./tailwind.config.js");
 
-  config.addExtension("js", {
-    outputFileExtension: "js",
-    compile: function (contents, inputPath) {
-      
-      if (inputPath.endsWith(`11tydata.js`)) return;
-      
-      return async (data) => {
-        let ret = await terser.minify(contents);
-        return ret.code;
-      };
-    },
-  });
+};
 
-  return {
-    dir: {
-      input: "_content",
-      includes: "../_includes",
-      data: "../_data",
-      output: "_site",
-    },
-  };
+export const config = {
+	dir: {
+    input: "_content",
+    includes: "../_includes",
+    data: "../_data",
+    output: "_site",
+	},
 };
