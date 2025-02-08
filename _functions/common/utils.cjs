@@ -1,15 +1,4 @@
-let fs = require("fs");
-let path = require("path");
-let members = [];
-
-fs.readdirSync('./_data/members').forEach(function(file) {
-  let contents = require(path.resolve('./_data/members/' + file));
-  members.push(contents);
-});
-
-members.sort((a, b) => {
-    return a.date > b.date ? 1 : -1;
-})
+import members from '../../_data/members.js'
 
 export const redirect = site => {
     const statusMessage = `redirecting to: ${site.website}`

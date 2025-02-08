@@ -1,5 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-/** icon docs https://iconify.design/docs/usage/css/tailwind/iconify/  */
 
 import { addIconSelectors } from '@iconify/tailwind';
 import  colors from 'tailwindcss/colors'

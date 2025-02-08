@@ -68,55 +68,55 @@ class: ["home", "page"]
 
       <ul class="flex flex-col gap-4 mt-4">
         {% for member in members %}
-          {% if member[1].name and member[1].website %}
+          {% if member.name and member.website %}
             <li class="flex flex-row items-center justify-between pt-1 " >
               <h3>
-                <a href="{{ member[1].website }}">{{ member[1].name }}</a>
+                <a href="{{ member.website }}">{{ member.name }}</a>
               </h3>
               <ul class="flex flex-row gap-3 items-center gap-4 ">
-                {% if member[1].linkedin %}
+                {% if member.linkedin %}
                   <li>
-                    <a href="{{ member[1].linkedin }}">
+                    <a href="{{ member.linkedin }}">
                        <span class="iconify simple-icons--linkedin size-8"></span>
-                        <span class="sr-only">LinkedIn profile: {{ member[1].name }}</span>
+                        <span class="sr-only">LinkedIn profile: {{ member.name }}</span>
                     </a>
                   </li>
                 {% endif %}
-                {% if member[1].orcid %}
+                {% if member.orcid %}
                   <li>
-                    <a href="{{ member[1].orcid }}">
+                    <a href="{{ member.orcid }}">
                         <span class="iconify simple-icons--orcid size-8"></span>
-                        <span class="sr-only">ORCID profile: {{ member[1].name }}</span>
+                        <span class="sr-only">ORCID profile: {{ member.name }}</span>
                     </a>
                   </li>
                 {% endif %}     
-                {% if member[1].github %}
+                {% if member.github %}
                   <li>
-                    <a href="{{ member[1].github }}">
+                    <a href="{{ member.github }}">
                       <span class="iconify simple-icons--github size-8"></span>
-                      <span class="sr-only">GitHub profile: {{ member[1].name }}</span>
+                      <span class="sr-only">GitHub profile: {{ member.name }}</span>
                     </a>
                   </li>
                 {% endif %}
-                {% if member[1].bluesky  %}
+                {% if member.bluesky %}
                   <li>
-                    <a href="{{ member[1].bluesky }}">
+                    <a href="{{ member.bluesky }}">
                       <span class="iconify simple-icons--bluesky size-8"></span>
-                      <span class="sr-only">Bluesky profile: {{ member[1].name }}</span>
+                      <span class="sr-only">Bluesky profile: {{ member.name }}</span>
                     </a>
                   </li>
                 {% endif %}
-                {% if member[1].mastodon  %}
+                {% if member.mastodon %}
                   <li>
-                    <a href="{{ member[1].mastodon }}">
+                    <a href="{{ member.mastodon }}">
                       <span class="iconify simple-icons--mastodon size-8"></span>
-                      <span class="sr-only">Mastodon profile: {{ member[1].name }}</span>
+                      <span class="sr-only">Mastodon profile: {{ member.name }}</span>
                     </a>
                   </li>
                 {% endif %}
-                {% if member[1].rss  %}
+                {% if member.rss %}
                   <li>
-                    <a href="{{ member[1].rss }}">
+                    <a href="{{ member.rss }}">
                       <span class="iconify simple-icons--rss size-8"></span>
                       <span class="sr-only">RSS feed: {{ member[1].name }}</span>
                     </a>

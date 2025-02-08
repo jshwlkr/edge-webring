@@ -1,5 +1,6 @@
 _site
 .netlify
+.vscode
 node_modules
 .DS_Store
 _includes/assets/css

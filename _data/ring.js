@@ -9,7 +9,6 @@ const buildTime = new Intl.DateTimeFormat("en-US", {
 export default {
     title: "Example Webring",
     description: "Example webring",
-    locale: "en-US",
     url: "https://edgewebring.netlify.app/",
     timestamp: {
         raw: now.toISOString(),
