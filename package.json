@@ -5,7 +5,7 @@
   "main": "index.html",
   "type": "module",
   "scripts": {
-    "build": "npx eleventy",
+    "build": "npm run copy:colors && npm run copy:serif && npm run copy:sans-serif && npx eleventy ",
     "start": "npx eleventy --serve",
     "clean": "rimraf -I -G -- _site",
     "copy:colors": "ncp node_modules/reasonable-colors/reasonable-colors-hsl.css _includes/assets/css/colors.css",
