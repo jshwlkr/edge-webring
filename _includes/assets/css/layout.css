@@ -326,6 +326,16 @@ code {
 }
 
 
+.footer-nav {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  gap: 1rem;
+  justify-content: center;
+  text-align: center;
+
+}
+
 footer {
     margin-block-start: var(--space, var(--s2));
   
@@ -341,12 +351,3 @@ footer {
   }
 }
 
-.footer-nav {
-  display: flex;
-  flex-direction: row;
-  list-style-type: none;
-  gap: 1rem;
-  justify-content: center;
-  text-align: center;
-
-}
