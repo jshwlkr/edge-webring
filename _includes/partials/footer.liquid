@@ -1,14 +1,10 @@
-<footer class="flex flex-row justify-between bg-primary-800 text-secondary-50 p-4">
-
-    <div>
-        <p>Made with Eleventy and Tailwind.</p>
-    </div>
+<footer>
 
     {% assign pages = collections.all | eleventyNavigation %}
-    <ul id="site-nav" class="flex flex-row gap-4">
+    <ul id="site-nav">
         {% for entry in pages %}
         <li{% if entry.url == page.url %} class="active"{% endif %}>
-            <a class="" href="{{ entry.url }}">{{ entry.title }}</a>
+            <a href="{{ entry.url }}">{{ entry.title }}</a>
         </li>
         {% endfor %}
     </ul>

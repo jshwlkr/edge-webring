@@ -5,28 +5,34 @@
   "main": "index.html",
   "type": "module",
   "scripts": {
-    "build": "npx eleventy && postcss _assets/css/tailwind.css --o _includes/assets/css/global.css",
-    "postcss": "npx postcss _assets/css/tailwind.css --o _includes/assets/css/global.css --watch",
-    "start": "concurrently \"npm run postcss\" \"npm run serve\"",
-    "serve": "npx eleventy --serve",
-    "clean": "rimraf -I -G -- _site"
+    "build": "npx eleventy",
+    "start": "npx eleventy --serve",
+    "clean": "rimraf -I -G -- _site",
+    "copy:colors": "ncp node_modules/reasonable-colors/reasonable-colors-hsl.css _includes/assets/css/colors.css",
+    "copy:serif": "ncp node_modules/@fontsource-variable/noto-serif/files/noto-serif-latin-wght-normal.woff2 _includes/assets/fonts/noto-serif-latin-wght-normal.woff2",
+    "copy:sans-serif": "ncp node_modules/@fontsource-variable/libre-franklin/files/libre-franklin-latin-wght-normal.woff2 _includes/assets/fonts/libre-franklin-latin-wght-normal.woff2"
   },
   "author": "",
   "license": "",
   "dependencies": {
     "@11ty/eleventy": "^3.0.0",
-    "@11ty/eleventy-navigation": "^0.3.5",
-    "concurrently": "^9.1.0",
-    "postcss-cli": "^11.0.0"
+    "@11ty/eleventy-navigation": "^1.0.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
+    "@fontsource-variable/libre-franklin": "^5.2.6",
+    "@fontsource-variable/noto-serif": "^5.2.7",
+    "@sardine/eleventy-plugin-tinycss": "^2.0.0",
+    "clean-css": "^5.3.3",
+    "eleventy-plugin-icons": "^4.5.4",
+    "feather-icons": "^4.29.2",
+    "lucide-static": "^0.544.0",
+    "prism-themes": "^1.9.0",
+    "reasonable-colors": "^0.4.0",
+    "simple-icons": "^15.10.0",
+    "svgo": "^4.0.0"
   },
   "devDependencies": {
-    "@iconify/json": "^2.2.288",
-    "@iconify/tailwind": "^1.2.0",
-    "@tailwindcss/typography": "^0.5.15",
-    "autoprefixer": "^10.4.20",
-    "netlify-cli": "^17.38.1",
-    "postcss": "^8.4.49",
-    "rimraf": "^6.0.1",
-    "tailwindcss": "^3.4.17"
+    "ncp": "^2.0.0",
+    "netlify-cli": "^23.0.0",
+    "rimraf": "^6.0.0"
   }
 }

@@ -1,9 +1,9 @@
 <!doctype html >
 <html lang="{{ ring.locale }}">
     {% include 'partials/head' %}
-<body class="{{ class | join: " " }} h-screen bg-scondary-50 text-xl">
+<body class="{{ class | join: " " }} page">
     <main>
-        <h1 class="font-sans text-center font-bold text-6xl">{{ title }}</h1>
+        <h1>{{ title }}</h1>
         {{ content }}
     </main>
     {% include 'partials/footer' %}

@@ -3,4 +3,4 @@ _site
 .vscode
 node_modules
 .DS_Store
-_includes/assets/css
+_includes/assets/css/colors.css

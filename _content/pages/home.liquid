@@ -4,96 +4,79 @@ layout: "base"
 title: "home"
 eleventyNavigation:
   key: "Home"
-class: ["home", "page"]
+class: "home"
 ---
-  <main class="[ grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-rows-4 ] text-primary-800">
+<main class="stack">
 
-    <div class="[ md:col-span-2 ] [ flex flex-col justify-center ] bg-primary-800 text-secondary-50 min-h-[80vh] gap-6">
-      <h1 class="font-sans text-center text-secondary-50 font-bold text-6xl">{{ ring.title }}</h1>
-      <p class="font-serif text-center text-secondary-50 text-2xl ">{{ ring.description }}</p>
+  <div class="header sidebar sidebar--right">
+    
+    <div class="title-block centered">
+      <h1 class="title sans-serif">{{ ring.title }}</h1>
+      <p class="subtitle sans-serif">{{ ring.description }}</p>
     </div>
 
-    <nav class="[  md:row-start-2 lg:col-start-3 lg:row-start-1 ] [ grid grid-cols-[1fr_3fr_1fr] grid-rows-3 ]  pt-8 lg:pt-0 ">
+    <nav class="nav-block centered">
     
-      <ul class="[ col-start-2 lg:row-start-2 ] [ flex flex-row md:flex-col items-start justify-between ] ">
+      <ul class="sans-serif">
         <li>
-          <a class="flex flex-row items-center gap-3 text-2xl font-semibold" rel="external" referrerpolicy="strict-origin" href="/prev">
-            <span class="iconify lucide--arrow-left size-12"></span>
+          <a href="{{ ring.url }}prev/">
+            {% icon "feather:arrow-left" %}
             <span>Previous website</span>
           </a>
         </li>
         <li>
-          <a class="flex flex-row items-center gap-3 text-2xl font-semibold" rel="external" referrerpolicy="strict-origin" href="/random">
-            <span class="iconify lucide--shuffle size-12"></span>
+          <a href="{{ ring.url }}random/">
+            {% icon "feather:shuffle" %}
             <span>Random website</span>
           </a>
         </li>
         <li>
-          <a class="flex flex-row items-center gap-3 text-2xl font-semibold" rel="external" referrerpolicy="strict-origin" href="/next">
-            <span class="iconify lucide--arrow-right size-12"></span>
+          <a href="{{ ring.url }}next/">
+            {% icon "feather:arrow-right" %}
             <span>Next website</span>
           </a>
         </li>
       </ul>
 
-      <div class="[ col-start-2 row-start-2 md:row-start-3 lg:self-end ] text-center ">
+      <div class="ad" >
         <p>
           <a href="#join-this-webring">Join this webring</a>
         </p>
       </div>
 
     </nav>
+  </div>
 
-    <nav class="[ md:row-span-2 md:row-start-2 lg:col-start-3 lg:row-span-1 ] p-6">
-      <div class="md:sticky md:top-0">
-        <h2 class="p-6 text-center text-2xl font-semibold">Table of contents</h2>
-        <a href="#members" class="sr-only focus:not-sr-only">Skip to members</a>
-        <a href="#site-nav" class="sr-only focus:not-sr-only">Skip to site navigation</a>
-        <ul class="pt-4 ps-4">
-          <li class="pt-2">
-            <a href="#members">Members</a>
-          </li>
-          <li class="pt-2">
-            <a href="#join-this-webring">Join this webring</a>
-          </li>
-          <li class="pt-2">
-            <a href="#embed-this-webring-on-your-website">Embed this webring on your website</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
-    <div class="[ lg:col-span-2 col-start-1 lg:row-start-2 ] p-6">
-      <h2 class=" text-2xl font-semibold" >Members <span eleventy:id-ignore>({{ members.size }})</span></h2>
-
-      <ul class="flex flex-col gap-4 mt-4">
+  <div class="members-block"> 
+      <h2>Members <span eleventy:id-ignore>({{ members.size }})</span></h2>
+      <ul class="member-wrapper" >
         {% for member in members %}
           {% if member.name and member.website %}
-            <li class="flex flex-row items-center justify-between pt-1 " >
+            <li class="member" >
               <h3>
                 <a href="{{ member.website }}">{{ member.name }}</a>
               </h3>
-              <ul class="flex flex-row gap-3 items-center gap-4 ">
+              <ul class="social" >
                 {% if member.linkedin %}
                   <li>
                     <a href="{{ member.linkedin }}">
-                       <span class="iconify simple-icons--linkedin size-8"></span>
-                        <span class="sr-only">LinkedIn profile: {{ member.name }}</span>
+                      {% icon "feather:linkedin" %}
+                      <span class="sr-only">LinkedIn profile: {{ member.name }}</span>
                     </a>
                   </li>
                 {% endif %}
                 {% if member.orcid %}
                   <li>
                     <a href="{{ member.orcid }}">
-                        <span class="iconify simple-icons--orcid size-8"></span>
-                        <span class="sr-only">ORCID profile: {{ member.name }}</span>
+                      {% icon "simple:orcid" %}
+                      <span class="sr-only">ORCID profile: {{ member.name }}</span>
                     </a>
                   </li>
                 {% endif %}     
                 {% if member.github %}
                   <li>
                     <a href="{{ member.github }}">
-                      <span class="iconify simple-icons--github size-8"></span>
+                      {% icon "simple:github" %}
                       <span class="sr-only">GitHub profile: {{ member.name }}</span>
                     </a>
                   </li>
@@ -101,7 +84,7 @@ class: ["home", "page"]
                 {% if member.bluesky %}
                   <li>
                     <a href="{{ member.bluesky }}">
-                      <span class="iconify simple-icons--bluesky size-8"></span>
+                      {% icon "simple:bluesky" %}
                       <span class="sr-only">Bluesky profile: {{ member.name }}</span>
                     </a>
                   </li>
@@ -109,7 +92,7 @@ class: ["home", "page"]
                 {% if member.mastodon %}
                   <li>
                     <a href="{{ member.mastodon }}">
-                      <span class="iconify simple-icons--mastodon size-8"></span>
+                      {% icon "simple:mastodon" %}
                       <span class="sr-only">Mastodon profile: {{ member.name }}</span>
                     </a>
                   </li>
@@ -117,7 +100,7 @@ class: ["home", "page"]
                 {% if member.rss %}
                   <li>
                     <a href="{{ member.rss }}">
-                      <span class="iconify simple-icons--rss size-8"></span>
+                      {% icon "simple:rss" %}
                       <span class="sr-only">RSS feed: {{ member[1].name }}</span>
                     </a>
                   </li>
@@ -127,20 +110,21 @@ class: ["home", "page"]
           {% endif %}
         {% endfor  %}
       </ul>
-    </div>
 
-    <div class="[ md:col-span-2 md:row-start-4 lg:row-start-3 ] p-4">
-      <h2 class="font-semibold text-xl">Join this webring</h2>
+    <div>
+      <h2 >Join this webring</h2>
       <p>Would you like to add youself to this webring?</p>
       <h3>Review the code of condcut</h3>
       <p>Note this webring's code of conduct.</p>
       <h3>Follow the contribution guidelines</h3>
+      <p>Additional instrutions.</p>
+    </div>
+  </div>
 
-     </div>
 
-    <div class="[ md:col-span-2 lg:col-span-3 md:row-start-5 lg:row-start-4 ] bg-primary-800 text-secondary-50 p-4">
-      <h2 class="font-semibold text-xl" >Embed this webring on your website</h2>
-      {%- include 'partials/embed' -%}
-     </div>
+  <div >
+    <h2>Embed this webring on your website</h2>
+  {%- include 'partials/embed' -%}
+  </div>
 
-  </main>
+</main>

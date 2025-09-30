@@ -1,9 +1,0 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer base {
-    hr, h2, h3, h4 {
-        @apply font-semibold;
-    }
-}

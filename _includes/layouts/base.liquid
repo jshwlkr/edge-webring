@@ -1,8 +1,8 @@
 <!doctype html >
-<html lang="en-US">
+<html lang="{{ ring.locale }}">
     {% include 'partials/head' %}
-<body class="{{ class | join: " " }} h-screen bg-scondary-50 text-xl">
-    {{ content }}
-    {% include 'partials/footer' %}
-</body>
+    <body class="{{ class | join: " " }}">
+        {{ content }}
+        {% include 'partials/footer' %}
+    </body>
 </html>

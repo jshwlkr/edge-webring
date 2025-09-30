@@ -1,5 +1,4 @@
 <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="{{ eleventy.generator }}">
@@ -11,8 +10,28 @@
         {{ ring.title }}
     </title>
 
-    <link rel="stylesheet" href="/global.css" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 
+
+    {% if ring.env == "build" %}
+
+        {% capture css-head %}
+            {% include "assets/css/colors.css" %}
+            {% include "assets/css/reset.css" %} 
+            {% include "assets/css/layout.css" %} 
+        {% endcapture %}
+         <style>
+            {{ css-head | cssmin }}
+        </style>
+    {% else %}
+     <link rel="stylesheet" href="/colors.css">
+         <link rel="stylesheet" href="/reset.css">
+          <link rel="stylesheet" href="/layout.css">
+    {% endif %}
+
+    
+    <link rel="preload" as="font" type="font/woff2" href="libre-franklin-latin-wght-normal.woff2" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="noto-serif-latin-wght-normal.woff2" crossorigin>
+    
     <meta name="description" content="{% if description %}{{ description }}{% else %}{{ ring.description }}{% endif %}">
-
 </head>
