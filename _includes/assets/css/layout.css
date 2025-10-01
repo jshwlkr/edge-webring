@@ -297,7 +297,7 @@ vertical-align: middle;
 pre {
 white-space: pre-wrap;
   background-color: var(--c-lightest);
-  overflow: scroll;
+overflow: auto;
 
 padding-left: var(--s1);
 padding-right: var(--s1);
