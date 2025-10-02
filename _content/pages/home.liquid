@@ -21,19 +21,19 @@ class: "home"
         <li>
           <a href="{{ ring.url }}prev/">
             {% icon "feather:arrow-left" %}
-            <span>Previous website</span>
+            <span>Previous url</span>
           </a>
         </li>
         <li>
           <a href="{{ ring.url }}random/">
             {% icon "feather:shuffle" %}
-            <span>Random website</span>
+            <span>Random url</span>
           </a>
         </li>
         <li>
           <a href="{{ ring.url }}next/">
             {% icon "feather:arrow-right" %}
-            <span>Next website</span>
+            <span>Next url</span>
           </a>
         </li>
       </ul>
@@ -51,17 +51,17 @@ class: "home"
       <h2>Members <span eleventy:id-ignore>({{ members.size }})</span></h2>
       <ul class="member-wrapper" >
         {% for member in members %}
-          {% if member.name and member.website %}
+          {% if member.title and member.url %}
             <li class="member" >
               <h3>
-                <a href="{{ member.website }}">{{ member.name }}</a>
+                <a href="{{ member.url }}">{{ member.title }}</a>
               </h3>
               <ul class="social" >
                 {% if member.linkedin %}
                   <li>
                     <a href="{{ member.linkedin }}">
                       {% icon "feather:linkedin" %}
-                      <span class="sr-only">LinkedIn profile: {{ member.name }}</span>
+                      <span class="sr-only">LinkedIn profile: {{ member.title }}</span>
                     </a>
                   </li>
                 {% endif %}
@@ -69,7 +69,7 @@ class: "home"
                   <li>
                     <a href="{{ member.orcid }}">
                       {% icon "simple:orcid" %}
-                      <span class="sr-only">ORCID profile: {{ member.name }}</span>
+                      <span class="sr-only">ORCID profile: {{ member.title }}</span>
                     </a>
                   </li>
                 {% endif %}     
@@ -77,7 +77,7 @@ class: "home"
                   <li>
                     <a href="{{ member.github }}">
                       {% icon "simple:github" %}
-                      <span class="sr-only">GitHub profile: {{ member.name }}</span>
+                      <span class="sr-only">GitHub profile: {{ member.title }}</span>
                     </a>
                   </li>
                 {% endif %}
@@ -85,7 +85,7 @@ class: "home"
                   <li>
                     <a href="{{ member.bluesky }}">
                       {% icon "simple:bluesky" %}
-                      <span class="sr-only">Bluesky profile: {{ member.name }}</span>
+                      <span class="sr-only">Bluesky profile: {{ member.title }}</span>
                     </a>
                   </li>
                 {% endif %}
@@ -93,15 +93,15 @@ class: "home"
                   <li>
                     <a href="{{ member.mastodon }}">
                       {% icon "simple:mastodon" %}
-                      <span class="sr-only">Mastodon profile: {{ member.name }}</span>
+                      <span class="sr-only">Mastodon profile: {{ member.title }}</span>
                     </a>
                   </li>
                 {% endif %}
-                {% if member.rss %}
+                {% if member.feed %}
                   <li>
-                    <a href="{{ member.rss }}">
+                    <a href="{{ member.feed }}">
                       {% icon "simple:rss" %}
-                      <span class="sr-only">RSS feed: {{ member[1].name }}</span>
+                      <span class="sr-only">RSS feed: {{ member.title }}</span>
                     </a>
                   </li>
                 {% endif %}
@@ -123,7 +123,7 @@ class: "home"
 
 
   <div >
-    <h2>Embed this webring on your website</h2>
+    <h2>Embed this webring on your url</h2>
   {%- include 'partials/embed' -%}
   </div>
 

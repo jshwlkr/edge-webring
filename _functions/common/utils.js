@@ -1,21 +1,21 @@
-import members from '../../_data/members.js'
+import members from '../../_data/members'
 
 export const redirect = site => {
-    const statusMessage = `redirecting to: ${site.website}`
+    const statusMessage = `redirecting to: ${site.url}`
     console.log(statusMessage)
 
     return {
         statusCode: 303,
-        headers: { Location: site.website },
+        headers: { Location: site.url },
         body: statusMessage
     }
 }
 
-export const getIndex = website =>
-    website ? members.findIndex(site => website.includes(site.website)) : -1
+export const getIndex = url =>
+    url ? members.findIndex(site => url.includes(site.url)) : -1
 
-export const getNext = website => {
-    const index = getIndex(website)
+export const getNext = url => {
+    const index = getIndex(url)
     if (index !== -1) {
         const nextIndex = index < members.length - 1 ? index + 1 : 0
         return members[nextIndex]
@@ -24,8 +24,8 @@ export const getNext = website => {
     return null
 }
 
-export const getPrevious = website => {
-    const index = getIndex(website)
+export const getPrevious = url => {
+    const index = getIndex(url)
     if (index !== -1) {
         const prevIndex = index > 0 ? index - 1 : members.length - 1
         return members[prevIndex]
@@ -34,9 +34,9 @@ export const getPrevious = website => {
     return null
 }
 
-export const getRandom = website => {
-    const selection = website
-        ? members.filter(site => !website.includes(site.website))
+export const getRandom = url => {
+    const selection = url
+        ? members.filter(site => !url.includes(site.url))
         : members
     const randomIndex = Math.floor(Math.random() * selection.length)
     return selection[randomIndex]

@@ -1,15 +1,15 @@
 
     [
         {
-            name: "An Example User",
-            website: "https://jshwlkr.info/",
-            rss: "https://jshwlkr.info/feed.xml",
-            github: "https://github.com/jshwlkr/"
+            "title": "An Example User",
+            "url": "https://jshwlkr.info/",
+            "feed": "https://jshwlkr.info/feed.xml",
+            "github": "https://github.com/jshwlkr/"
         },
         {
-            name: "Another Example User",
-            website: "https://jshwlkr.info/2/",
-            rss: "https://jshwlkr.info/feed.xml",
-            mastodon: "https://ansible.jshwlkr.info/@jshwlkr"
+            "title": "Another Example User",
+            "url": "https://jshwlkr.info/2/",
+            "feed": "https://jshwlkr.info/feed.xml",
+            "mastodon": "https://ansible.jshwlkr.info/@jshwlkr"
         }
     ]
