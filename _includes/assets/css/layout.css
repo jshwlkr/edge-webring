@@ -166,7 +166,7 @@ h3 {
 }
 
 .nav-block .ad {
-  margin-block-start: var(--s-1);
+  margin-block-start: var(--s2);
   font-size: clamp(var(--s-1), 2.5vw, var(--s0));
 }
 

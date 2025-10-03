@@ -4,6 +4,8 @@ import pluginNavigation from "@11ty/eleventy-navigation";
 import pluginIcons from 'eleventy-plugin-icons';
 import pluginTinyCSS from '@sardine/eleventy-plugin-tinycss';
 import pluginSyntax from "@11ty/eleventy-plugin-syntaxhighlight";
+import pluginSitemap from "@quasibit/eleventy-plugin-sitemap";
+import pluginSafeLinks from "@sardine/eleventy-plugin-external-links";
 import CleanCSS from "clean-css";
 import { optimize, loadConfig } from 'svgo';
 
@@ -25,6 +27,15 @@ export default async function(config) {
 
 	config.addPlugin(IdAttributePlugin);
 	config.addPlugin(pluginNavigation);
+	config.addPlugin(pluginSafeLinks);
+	
+
+		config.addPlugin(pluginSitemap, {
+			sitemap: {
+			hostname: ring.url,
+			},
+		});
+
 	config.addPlugin(pluginSyntax);
 
 
